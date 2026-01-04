@@ -1,0 +1,47 @@
+.scroll-progress-container {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    stroke-dasharray: 163;
+    /* 2πr where r=26 */
+    stroke-dashoffset: 163;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-percentage {
+    position: absolute;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-primary-deep-olive);
+    font-family: var(--font-body);
+}
+
+@media (max-width: 768px) {
+    .scroll-progress-container {
+        bottom: var(--space-md);
+        right: var(--space-md);
+    }
+
+    .scroll-progress-container svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .progress-ring-circle,
+    .progress-ring-circle-bg {
+        r: 22;
+        cx: 25;
+        cy: 25;
+    }
+}

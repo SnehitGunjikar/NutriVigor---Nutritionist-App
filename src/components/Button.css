@@ -1,0 +1,92 @@
+.btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Primary Button - Champagne Gold */
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-gold) 0%, #b89550 100%);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(198, 167, 94, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(198, 167, 94, 0.4);
+}
+
+/* Secondary Button - Outlined */
+.btn-secondary {
+    background: transparent;
+    color: var(--color-primary-deep-olive);
+    border: 2px solid var(--color-primary-deep-olive);
+    box-shadow: none;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-primary-deep-olive);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Tertiary Button - Soft */
+.btn-tertiary {
+    background-color: var(--color-primary-sage);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(163, 177, 138, 0.2);
+}
+
+.btn-tertiary:hover:not(:disabled) {
+    background-color: var(--color-primary-deep-olive);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(163, 177, 138, 0.3);
+}
+
+/* Button Sizes */
+.btn-small {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-sm);
+}
+
+.btn-medium {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--text-base);
+}
+
+.btn-large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-lg);
+}
+
+/* Full Width */
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Icon Button */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+@media (max-width: 768px) {
+    .btn-large {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--text-base);
+    }
+}

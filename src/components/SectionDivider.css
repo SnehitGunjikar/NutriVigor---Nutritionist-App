@@ -1,0 +1,39 @@
+.section-divider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.section-divider {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+    color: var(--color-bg-off-white);
+}
+
+.section-divider.flip {
+    transform: scaleY(-1);
+}
+
+/* Color variants */
+.section-divider.sage {
+    color: var(--color-primary-sage);
+    opacity: 0.3;
+}
+
+.section-divider.olive {
+    color: var(--color-primary-deep-olive);
+    opacity: 0.15;
+}
+
+.section-divider.white {
+    color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+    .section-divider {
+        height: 40px;
+    }
+}

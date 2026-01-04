@@ -1,0 +1,80 @@
+.parallax-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-background {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    bottom: -20%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.parallax-background.default {
+    background: var(--color-bg-off-white);
+}
+
+.parallax-background.sage {
+    background: linear-gradient(180deg, var(--color-bg-off-white) 0%, var(--color-primary-sage) 100%);
+    opacity: 0.1;
+}
+
+.parallax-background.olive {
+    background: linear-gradient(180deg, var(--color-primary-sage) 0%, var(--color-primary-deep-olive) 100%);
+    opacity: 0.05;
+}
+
+.parallax-background.gradient {
+    background: var(--gradient-fresh);
+    opacity: 0.08;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    will-change: opacity;
+}
+
+/* Section Variations */
+.parallax-section.full-height {
+    min-height: 100vh;
+}
+
+.parallax-section.auto-height {
+    min-height: auto;
+    padding: var(--space-3xl) 0;
+}
+
+/* Decorative Elements */
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary-sage), transparent);
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .parallax-section {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+
+    .parallax-background {
+        top: 0;
+        bottom: 0;
+    }
+}
