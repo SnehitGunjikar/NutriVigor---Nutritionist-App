@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import FloatingElements from './components/FloatingElements';
 import ScrollProgress from './components/ScrollProgress';
 import ParallaxSection from './components/ParallaxSection';
 import ScrollReveal from './components/ScrollReveal';
@@ -12,6 +11,8 @@ import Card from './components/Card';
 import Button from './components/Button';
 import CountUp from './components/CountUp';
 import ClickSpark from './components/ClickSpark';
+import WhyUs from './components/WhyUs';
+import WhyUsStats from './components/WhyUsStats';
 import './App.css';
 
 function App() {
@@ -26,27 +27,59 @@ function App() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Hero content features
+    // Enhanced Features/Benefits for Why Us Carousel
     const features = [
         {
             icon: '🎯',
             title: 'Personalized Plans',
-            description: 'Customized nutrition strategies tailored to your unique body, lifestyle, and health goals.'
+            description: 'Customized nutrition strategies tailored to your unique body, lifestyle, and health goals. No cookie-cutter approaches—just results designed for you.',
+            highlight: 'Tailored to your DNA & lifestyle'
         },
         {
             icon: '🔬',
             title: 'Science-Backed Approach',
-            description: 'Evidence-based protocols rooted in the latest nutritional science and research.'
+            description: 'Evidence-based protocols rooted in the latest nutritional science and research. Every recommendation is backed by clinical studies and proven results.',
+            highlight: 'Research-validated methods'
         },
         {
             icon: '♻️',
             title: 'Sustainable Results',
-            description: 'Long-term health transformation, not quick fixes or crash diets.'
+            description: 'Long-term health transformation, not quick fixes or crash diets. Build habits that last a lifetime with our proven methodology.',
+            highlight: '95% client retention rate'
         },
         {
             icon: '🌿',
             title: 'Holistic Wellness',
-            description: 'Comprehensive approach addressing nutrition, lifestyle, and mindset.'
+            description: 'Comprehensive approach addressing nutrition, lifestyle, and mindset. We treat the whole person, not just symptoms.',
+            highlight: 'Mind + Body + Nutrition'
+        }
+    ];
+
+    // Stats for Why Us Section
+    const whyUsStats = [
+        {
+            icon: '🏆',
+            value: 8,
+            suffix: '+',
+            label: 'Years Experience'
+        },
+        {
+            icon: '👥',
+            value: 500,
+            suffix: '+',
+            label: 'Success Stories'
+        },
+        {
+            icon: '⭐',
+            value: 95,
+            suffix: '%',
+            label: 'Success Rate'
+        },
+        {
+            icon: '📊',
+            value: 12,
+            suffix: '+',
+            label: 'Programs Offered'
         }
     ];
 
@@ -113,7 +146,6 @@ function App() {
             extraScale={1}
         >
             <div className="app single-page">
-                <FloatingElements />
                 <Navbar />
                 <ScrollProgress />
 
@@ -202,7 +234,7 @@ function App() {
 
                 <SectionDivider variant="wave" />
 
-                {/* WHY NUTRIVIGOR SECTION */}
+                {/* WHY NUTRIVIGOR SECTION - PREMIUM CAROUSEL */}
                 <ParallaxSection id="why" background="default" speed="slow" className="auto-height">
                     <div className="section">
                         <div className="container">
@@ -215,17 +247,13 @@ function App() {
                                 </div>
                             </ScrollReveal>
 
-                            <div className="features-grid">
-                                {features.map((feature, index) => (
-                                    <ScrollReveal key={index} direction="up" delay={index * 0.1}>
-                                        <Card variant="default" className="feature-card">
-                                            <div className="card-icon">{feature.icon}</div>
-                                            <h3 className="card-title">{feature.title}</h3>
-                                            <p className="card-description">{feature.description}</p>
-                                        </Card>
-                                    </ScrollReveal>
-                                ))}
-                            </div>
+                            {/* Interactive Carousel */}
+                            <ScrollReveal direction="up" delay={0.2}>
+                                <WhyUs benefits={features} />
+                            </ScrollReveal>
+
+                            {/* Animated Stats */}
+                            <WhyUsStats stats={whyUsStats} />
                         </div>
                     </div>
                 </ParallaxSection>

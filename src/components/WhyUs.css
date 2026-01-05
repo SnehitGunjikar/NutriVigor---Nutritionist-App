@@ -1,0 +1,342 @@
+/* WHY US CAROUSEL */
+.why-us-carousel {
+    position: relative;
+    width: 100%;
+    padding: 3rem 0;
+}
+
+.carousel-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* LEFT SIDE - ICON */
+.carousel-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-icon-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.carousel-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent-gold);
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+}
+
+.carousel-icon {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.1));
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulse-glow 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* RIGHT SIDE - CONTENT */
+.carousel-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carousel-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    color: var(--color-primary-deep-olive);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.carousel-description {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.8;
+    color: var(--color-text-graphite);
+    margin: 0;
+    max-width: 600px;
+}
+
+.carousel-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(135deg,
+            rgba(212, 175, 55, 0.15),
+            rgba(212, 175, 55, 0.08));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+    color: var(--color-primary-deep-olive);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+    align-self: flex-start;
+}
+
+.highlight-icon {
+    font-size: 1.25rem;
+}
+
+/* CAROUSEL CONTROLS */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-arrow {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(58, 90, 64, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--color-primary-deep-olive);
+}
+
+.carousel-arrow:hover {
+    background: var(--color-accent-gold);
+    border-color: var(--color-accent-gold);
+    color: var(--color-white);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.carousel-arrow:active {
+    transform: scale(0.95);
+}
+
+/* DOTS NAVIGATION */
+.carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.carousel-dot {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot-inner {
+    width: 12px;
+    height: 12px;
+    background: rgba(58, 90, 64, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot:hover .dot-inner {
+    background: rgba(58, 90, 64, 0.4);
+    transform: scale(1.3);
+}
+
+.carousel-dot.active .dot-inner {
+    background: var(--color-accent-gold);
+    border-radius: 50%;
+    /* Ensure it remains a circle */
+    transform: scale(1.4);
+}
+
+/* Remove the progress bar overlay - keep it simple */
+.dot-progress {
+    display: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 968px) {
+    .carousel-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 2rem;
+    }
+
+    .carousel-left {
+        order: -1;
+    }
+
+    .carousel-icon {
+        width: 160px;
+        height: 160px;
+        font-size: 4.5rem;
+    }
+
+    .icon-glow {
+        width: 180px;
+        height: 180px;
+    }
+
+    .carousel-title {
+        text-align: center;
+    }
+
+    .carousel-description {
+        text-align: center;
+    }
+
+    .carousel-highlight {
+        align-self: center;
+    }
+
+    .carousel-controls {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .carousel-icon {
+        width: 140px;
+        height: 140px;
+        font-size: 3.5rem;
+    }
+
+    .icon-glow {
+        width: 160px;
+        height: 160px;
+    }
+
+    .carousel-controls {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-us-carousel {
+        padding: 2rem 0;
+    }
+
+    .carousel-container {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        border-radius: 24px;
+    }
+
+    .carousel-icon {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+
+    .icon-glow {
+        width: 140px;
+        height: 140px;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-dots {
+        gap: 0.5rem;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot-inner {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel-dot.active .dot-inner {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel-highlight {
+        font-size: 0.875rem;
+        padding: 0.625rem 1rem;
+    }
+}

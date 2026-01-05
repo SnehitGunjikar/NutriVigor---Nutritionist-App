@@ -127,41 +127,6 @@
     background: rgba(255, 255, 255, 0.25);
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.scroll-indicator-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.scroll-indicator-link:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateY(5px);
-}
-
-.scroll-text {
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.scroll-indicator svg {
-    animation: bounce-arrow 2s ease-in-out infinite;
-}
-
 /* Animations */
 @keyframes pulse-glow {
 
@@ -174,18 +139,6 @@
     50% {
         transform: scale(1.1);
         opacity: 0.8;
-    }
-}
-
-@keyframes bounce-arrow {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(8px);
     }
 }
 
@@ -411,29 +364,74 @@
 /* FLOATING CTA */
 .floating-cta {
     position: fixed;
-    bottom: var(--space-xl);
-    left: var(--space-lg);
+    bottom: 2rem;
+    left: 2rem;
     z-index: 999;
-    background: var(--gradient-primary);
+    /* Perfect Glassmorphism Effect */
+    background: rgba(58, 90, 64, 0.4);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 48, 36, 0.37),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 1px 2px rgba(255, 255, 255, 0.1) inset;
     color: var(--color-white);
-    padding: var(--space-md) var(--space-lg);
+    padding: 0.875rem 1.5rem;
     border-radius: 50px;
-    box-shadow: var(--shadow-strong);
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0.625rem;
     text-decoration: none;
-    transition: all var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.floating-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            rgba(212, 175, 55, 0.4),
+            rgba(163, 177, 138, 0.2),
+            rgba(212, 175, 55, 0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .floating-cta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(58, 90, 64, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(58, 90, 64, 0.55);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 12px 40px rgba(31, 48, 36, 0.45),
+        0 0 0 1px rgba(212, 175, 55, 0.2) inset,
+        0 1px 3px rgba(255, 255, 255, 0.15) inset,
+        0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.floating-cta:hover::before {
+    opacity: 1;
 }
 
 .floating-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.floating-cta:hover .floating-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .floating-text {
@@ -496,14 +494,6 @@
         display: none;
     }
 
-    .scroll-indicator {
-        bottom: 1rem;
-    }
-
-    .scroll-text {
-        font-size: 0.75rem;
-    }
-
     .hero-cta {
         flex-direction: column;
         width: 100%;
@@ -528,11 +518,13 @@
     .floating-cta {
         left: 50%;
         transform: translateX(-50%);
-        bottom: var(--space-md);
+        bottom: 1.5rem;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
     }
 
     .floating-cta:hover {
-        transform: translateX(-50%) translateY(-5px);
+        transform: translateX(-50%) translateY(-3px) scale(1.02);
     }
 
     .visual-placeholder {
@@ -556,10 +548,6 @@
 
     .trust-badge-item {
         min-width: 80px;
-    }
-
-    .scroll-indicator {
-        bottom: 0.5rem;
     }
 
     .trust-content {
