@@ -56,7 +56,11 @@ function WhyUs({ benefits = [] }) {
                             className="carousel-icon-wrapper"
                         >
                             <div className="carousel-icon">
-                                {currentBenefit.icon}
+                                <img
+                                    src={currentBenefit.icon}
+                                    alt={currentBenefit.title}
+                                    className="carousel-icon-image"
+                                />
                             </div>
                             <div className="icon-glow"></div>
                         </motion.div>

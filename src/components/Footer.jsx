@@ -86,9 +86,15 @@ function Footer() {
                                     <span className="link-icon">→</span> Testimonials
                                 </ScrollLink>
                             </li>
+
                             <li>
                                 <ScrollLink to="consultation" smooth={true} duration={800} offset={-80}>
                                     <span className="link-icon">→</span> Contact
+                                </ScrollLink>
+                            </li>
+                            <li>
+                                <ScrollLink to="faq" smooth={true} duration={800} offset={-80}>
+                                    <span className="link-icon">→</span> FAQ
                                 </ScrollLink>
                             </li>
                         </ul>

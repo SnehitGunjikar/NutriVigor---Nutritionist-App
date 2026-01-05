@@ -13,6 +13,7 @@ import CountUp from './components/CountUp';
 import ClickSpark from './components/ClickSpark';
 import WhyUs from './components/WhyUs';
 import WhyUsStats from './components/WhyUsStats';
+import FAQ from './components/FAQ';
 import './App.css';
 
 function App() {
@@ -30,25 +31,25 @@ function App() {
     // Enhanced Features/Benefits for Why Us Carousel
     const features = [
         {
-            icon: '🎯',
+            icon: '/images/personalized_nutrition_plan.png',
             title: 'Personalized Plans',
             description: 'Customized nutrition strategies tailored to your unique body, lifestyle, and health goals. No cookie-cutter approaches—just results designed for you.',
             highlight: 'Tailored to your DNA & lifestyle'
         },
         {
-            icon: '🔬',
+            icon: '/images/science_backed_nutrition.png',
             title: 'Science-Backed Approach',
             description: 'Evidence-based protocols rooted in the latest nutritional science and research. Every recommendation is backed by clinical studies and proven results.',
             highlight: 'Research-validated methods'
         },
         {
-            icon: '♻️',
+            icon: '/images/sustainable_wellness_results.png',
             title: 'Sustainable Results',
             description: 'Long-term health transformation, not quick fixes or crash diets. Build habits that last a lifetime with our proven methodology.',
             highlight: '95% client retention rate'
         },
         {
-            icon: '🌿',
+            icon: '/images/holistic_wellness_approach.png',
             title: 'Holistic Wellness',
             description: 'Comprehensive approach addressing nutrition, lifestyle, and mindset. We treat the whole person, not just symptoms.',
             highlight: 'Mind + Body + Nutrition'
@@ -133,6 +134,42 @@ function App() {
             text: "The science-backed approach gave me confidence. No gimmicks, just real results that last.",
             author: "Rahul Mehta",
             title: "Entrepreneur"
+        }
+    ];
+
+    // FAQ Data
+    const faqs = [
+        {
+            question: "What makes Nutrivigor different from other nutritionists?",
+            answer: "We combine personalized, science-backed nutrition plans with a holistic approach that addresses your unique body chemistry, lifestyle, and health goals. Unlike one-size-fits-all programs, every recommendation is tailored specifically to you and backed by the latest research."
+        },
+        {
+            question: "How long does it take to see results?",
+            answer: "Most clients notice positive changes within the first 2-4 weeks, including improved energy, better digestion, and initial weight changes. However, sustainable transformation is a journey—we focus on long-term results rather than quick fixes. Your personalized timeline will be discussed during your consultation."
+        },
+        {
+            question: "Do I need to follow a restrictive diet?",
+            answer: "Absolutely not! We don't believe in restrictive crash diets. Our approach focuses on sustainable, balanced nutrition that fits your lifestyle. You'll learn to enjoy nutritious foods while still having flexibility for the foods you love."
+        },
+        {
+            question: "Can you help with specific health conditions?",
+            answer: "Yes! We specialize in managing various conditions including PCOS, diabetes, thyroid disorders, gut health issues, and hormonal imbalances. All our protocols are evidence-based and can be coordinated with your healthcare provider."
+        },
+        {
+            question: "What's included in a consultation?",
+            answer: "Your initial consultation includes a comprehensive health assessment, body composition analysis, lifestyle evaluation, and a detailed discussion of your goals. You'll receive a personalized nutrition plan, meal guidelines, and ongoing support through your wellness journey."
+        },
+        {
+            question: "Do you provide meal plans?",
+            answer: "Yes! You'll receive customized meal plans tailored to your preferences, schedule, and nutritional needs. We also provide recipes, shopping lists, and practical guidance to make healthy eating simple and enjoyable."
+        },
+        {
+            question: "How often will I need follow-up consultations?",
+            answer: "Follow-up frequency depends on your goals and needs. Typically, clients meet bi-weekly or monthly for the first few months, then transition to maintenance check-ins. We also offer WhatsApp support for ongoing guidance between sessions."
+        },
+        {
+            question: "Is online consultation as effective as in-person?",
+            answer: "Absolutely! Our virtual consultations are comprehensive and convenient. You'll receive the same personalized attention, detailed assessments, and ongoing support—all from the comfort of your home. Most clients find online sessions even more convenient and effective."
         }
     ];
 
@@ -447,6 +484,28 @@ function App() {
                                     </p>
                                     <Button variant="primary" size="large">Book Free Consultation</Button>
                                 </div>
+                            </ScrollReveal>
+                        </div>
+                    </div>
+                </ParallaxSection>
+
+                <SectionDivider variant="wave" flip />
+
+                {/* FAQ SECTION */}
+                <ParallaxSection id="faq" background="default" speed="slow" className="auto-height">
+                    <div className="section">
+                        <div className="container">
+                            <ScrollReveal direction="up">
+                                <div className="section-header text-center">
+                                    <h2>Frequently Asked Questions</h2>
+                                    <p className="section-subtitle">
+                                        Get answers to common questions about our nutrition programs and services
+                                    </p>
+                                </div>
+                            </ScrollReveal>
+
+                            <ScrollReveal direction="up" delay={0.2}>
+                                <FAQ faqs={faqs} />
                             </ScrollReveal>
                         </div>
                     </div>
