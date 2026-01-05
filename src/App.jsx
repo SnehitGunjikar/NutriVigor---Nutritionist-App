@@ -150,7 +150,7 @@ function App() {
                 <ScrollProgress />
 
                 {/* HERO SECTION */}
-                <ParallaxSection id="home" background="gradient" speed="medium" className="full-height">
+                <ParallaxSection id="home" background="default" speed="medium" className="full-height">
                     <div className="hero-section">
                         <div className="container">
                             <ScrollReveal direction="up" delay={0.2}>
@@ -251,9 +251,6 @@ function App() {
                             <ScrollReveal direction="up" delay={0.2}>
                                 <WhyUs benefits={features} />
                             </ScrollReveal>
-
-                            {/* Animated Stats */}
-                            <WhyUsStats stats={whyUsStats} />
                         </div>
                     </div>
                 </ParallaxSection>
@@ -261,7 +258,7 @@ function App() {
                 <SectionDivider variant="curve" flip />
 
                 {/* SERVICES/PROGRAMS SECTION */}
-                <ParallaxSection id="services" background="sage" speed="medium" className="auto-height">
+                <ParallaxSection id="services" background="default" speed="medium" className="auto-height">
                     <div className="section services-section bg-white">
                         <div className="container">
                             <ScrollReveal direction="up">

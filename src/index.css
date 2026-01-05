@@ -180,11 +180,11 @@ a {
 }
 
 .section {
-  padding: var(--space-3xl) 0;
+  padding: 1rem 0;
 }
 
 .section-sm {
-  padding: var(--space-2xl) 0;
+  padding: 0.75rem 0;
 }
 
 .text-center {
@@ -379,7 +379,7 @@ a {
   }
 
   .section {
-    padding: var(--space-2xl) 0;
+    padding: 1rem 0;
   }
 
   h1 {

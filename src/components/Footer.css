@@ -351,49 +351,90 @@
     height: 20px;
 }
 
+/* FOOTER BRANDING SECTION - Premium Antigravity Style */
+.footer-branding-section {
+    padding: 2.5rem 0 2.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-branding-logo {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 15vw, 10rem);
+    font-weight: 900;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0.65) 50%,
+            rgba(198, 167, 94, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    letter-spacing: clamp(0.15em, 2vw, 0.35em);
+    margin: 0;
+    padding: 0 2rem 1rem;
+    text-transform: none;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.footer-branding-logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(198, 167, 94, 0.4) 50%,
+            transparent 100%);
+    opacity: 0.4;
+}
+
 /* FOOTER BOTTOM */
 .footer-bottom {
     position: relative;
     z-index: 1;
-    padding-top: 2rem;
+    padding: 2rem 0 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
+    text-align: center;
 }
 
-.copyright {
-    color: rgba(255, 255, 255, 0.6);
+.footer-copyright {
     font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
 }
 
-.footer-legal {
+.footer-bottom-links {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.footer-legal a {
-    color: rgba(255, 255, 255, 0.6);
+.footer-bottom-links a {
     font-size: 0.875rem;
-    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.footer-legal a:hover {
+.footer-bottom-links a:hover {
     color: var(--color-accent-gold);
-}
-
-.separator {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 0.875rem;
 }
 
 /* RESPONSIVE DESIGN */
@@ -463,8 +504,20 @@
         gap: 1rem;
     }
 
-    .footer-legal {
-        justify-content: center;
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .footer-branding-logo {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        letter-spacing: clamp(0.1em, 1.5vw, 0.25em);
+        padding: 0 1rem 0.75rem;
+        line-height: 1.2;
+    }
+
+    .footer-branding-section {
+        padding: 2rem 0 2rem;
     }
 }
 

@@ -192,16 +192,23 @@ function Footer() {
                     </div>
                 </div>
 
-                {/* Footer Bottom */}
+                {/* Footer Bottom - Large Branding */}
+                <div className="footer-branding-section">
+                    <div className="footer-branding-logo">
+                        Nutrivigor
+                    </div>
+                </div>
+
+                {/* Footer Bottom - Links & Copyright */}
                 <div className="footer-bottom">
                     <div className="footer-bottom-content">
-                        <p className="copyright">© {currentYear} Nutrivigor. All rights reserved.</p>
-                        <div className="footer-legal">
-                            <a href="#">Privacy Policy</a>
-                            <span className="separator">•</span>
-                            <a href="#">Terms of Service</a>
-                            <span className="separator">•</span>
-                            <a href="#">Cookie Policy</a>
+                        <p className="footer-copyright">
+                            © {new Date().getFullYear()} Nutrivigor. All rights reserved.
+                        </p>
+                        <div className="footer-bottom-links">
+                            <a href="#privacy">Privacy Policy</a>
+                            <a href="#terms">Terms of Service</a>
+                            <a href="#contact">Contact</a>
                         </div>
                     </div>
                 </div>
