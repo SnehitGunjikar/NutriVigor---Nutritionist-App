@@ -50,7 +50,7 @@ function Navbar() {
                     duration={500}
                     className="navbar-brand"
                 >
-                    NutriVigor
+                    Nutrivigor
                 </ScrollLink>
 
                 <ul className="navbar-links">

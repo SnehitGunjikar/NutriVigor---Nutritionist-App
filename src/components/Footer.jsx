@@ -7,7 +7,7 @@ function Footer() {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-section">
-                        <h3 className="footer-brand">NutriVigor</h3>
+                        <h3 className="footer-brand">Nutrivigor</h3>
                         <p className="footer-tagline">Nourish with Purpose. Thrive with Strength.</p>
                         <p className="footer-description">
                             Science-backed nutrition for sustainable wellness and holistic health transformation.
@@ -99,7 +99,7 @@ function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} NutriVigor. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Nutrivigor. All rights reserved.</p>
                     <div className="footer-legal">
                         <a href="#">Privacy Policy</a>
                         <span>•</span>
