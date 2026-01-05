@@ -123,6 +123,16 @@ function App() {
                         <div className="container">
                             <ScrollReveal direction="up" delay={0.2}>
                                 <div className="hero-content">
+                                    <motion.div
+                                        className="hero-badge"
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.6, delay: 0.1 }}
+                                    >
+                                        <span className="badge-icon">✨</span>
+                                        <span className="badge-text">Transform Your Health Journey</span>
+                                    </motion.div>
+
                                     <motion.h1
                                         className="hero-title"
                                         initial={{ opacity: 0, y: 30 }}
@@ -131,6 +141,7 @@ function App() {
                                     >
                                         Personalized Nutrition That Transforms Your Health for Life
                                     </motion.h1>
+
                                     <motion.p
                                         className="hero-subtitle"
                                         initial={{ opacity: 0 }}
@@ -140,6 +151,7 @@ function App() {
                                         Science-backed nutrition plans designed for sustainable wellness.
                                         No crash diets. No shortcuts. Just real, lasting transformation.
                                     </motion.p>
+
                                     <motion.div
                                         className="hero-cta"
                                         initial={{ opacity: 0, y: 20 }}
@@ -152,6 +164,35 @@ function App() {
                                         <ScrollLink to="services" smooth={true} duration={800}>
                                             <Button variant="secondary" size="large">View Programs</Button>
                                         </ScrollLink>
+                                    </motion.div>
+
+                                    {/* Trust Badges */}
+                                    <motion.div
+                                        className="hero-trust-badges"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.9 }}
+                                    >
+                                        <div className="trust-badge-item">
+                                            <div className="trust-badge-number">
+                                                <CountUp to={8} duration={2} delay={1.2} suffix="+" />
+                                            </div>
+                                            <div className="trust-badge-label">Years</div>
+                                        </div>
+                                        <div className="trust-badge-divider"></div>
+                                        <div className="trust-badge-item">
+                                            <div className="trust-badge-number">
+                                                <CountUp to={500} duration={2.5} delay={1.3} suffix="+" />
+                                            </div>
+                                            <div className="trust-badge-label">Clients</div>
+                                        </div>
+                                        <div className="trust-badge-divider"></div>
+                                        <div className="trust-badge-item">
+                                            <div className="trust-badge-number">
+                                                <CountUp to={95} duration={2} delay={1.4} suffix="%" />
+                                            </div>
+                                            <div className="trust-badge-label">Success Rate</div>
+                                        </div>
                                     </motion.div>
                                 </div>
                             </ScrollReveal>
