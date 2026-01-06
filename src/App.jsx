@@ -14,10 +14,12 @@ import ClickSpark from './components/ClickSpark';
 import WhyUs from './components/WhyUs';
 import WhyUsStats from './components/WhyUsStats';
 import FAQ from './components/FAQ';
+import ConsultationModal from './components/ConsultationModal';
 import './App.css';
 
 function App() {
     const [showFloatingCTA, setShowFloatingCTA] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -227,9 +229,13 @@ function App() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.8, delay: 0.7 }}
                                     >
-                                        <ScrollLink to="consultation" smooth={true} duration={800}>
-                                            <Button variant="primary" size="large">Book a Consultation</Button>
-                                        </ScrollLink>
+                                        <Button
+                                            variant="primary"
+                                            size="large"
+                                            onClick={() => setIsModalOpen(true)}
+                                        >
+                                            Book a Consultation
+                                        </Button>
                                         <ScrollLink to="services" smooth={true} duration={800}>
                                             <Button variant="secondary" size="large">View Programs</Button>
                                         </ScrollLink>
@@ -482,7 +488,13 @@ function App() {
                                         Take the first step toward sustainable health transformation.
                                         Book your personalized consultation and discover how Nutrivigor can help you thrive.
                                     </p>
-                                    <Button variant="primary" size="large">Book Free Consultation</Button>
+                                    <Button
+                                        variant="primary"
+                                        size="large"
+                                        onClick={() => setIsModalOpen(true)}
+                                    >
+                                        Book Free Consultation
+                                    </Button>
                                 </div>
                             </ScrollReveal>
                         </div>
@@ -520,12 +532,22 @@ function App() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
                     >
-                        <ScrollLink to="consultation" smooth={true} duration={800} className="floating-cta">
-                            <span className="floating-icon">📅</span>
-                            <span className="floating-text">Book Consultation</span>
-                        </ScrollLink>
+                        <button
+                            className="floating-cta"
+                            onClick={() => setIsModalOpen(true)}
+                            aria-label="Book consultation"
+                        >
+                            <span className="floating-cta-icon">📅</span>
+                            <span className="floating-cta-text">Book Consultation</span>
+                        </button>
                     </motion.div>
                 )}
+
+                {/* Consultation Modal */}
+                <ConsultationModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                />
             </div>
         </ClickSpark>
     );
