@@ -57,6 +57,7 @@
     font-size: var(--text-base);
     line-height: 1.7;
     margin-bottom: var(--space-md);
+    text-align: justify;
 }
 
 .card-footer {
@@ -90,6 +91,7 @@
     margin-bottom: var(--space-md);
     position: relative;
     z-index: 1;
+    text-align: justify;
 }
 
 .testimonial-author {

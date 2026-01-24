@@ -50,6 +50,7 @@
     color: var(--color-text-graphite);
     font-size: 1rem;
     margin: 0;
+    text-align: justify;
 }
 
 .modal-close {
@@ -171,6 +172,17 @@
     cursor: not-allowed;
 }
 
+.modal-whatsapp-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.modal-whatsapp-cta .btn {
+    width: 100%;
+}
+
 /* SPINNER */
 .spinner {
     width: 18px;
@@ -219,6 +231,7 @@
     font-size: 1rem;
     line-height: 1.6;
     margin: 0;
+    text-align: justify;
 }
 
 @keyframes scaleIn {

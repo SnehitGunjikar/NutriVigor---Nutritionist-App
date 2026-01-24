@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
+import logo from '../assets/images/NV logo .PNG';
 import './Navbar.css';
 
 function Navbar() {
@@ -13,7 +14,7 @@ function Navbar() {
             setIsScrolled(window.scrollY > 50);
 
             // Determine active section
-            const sections = ['home', 'why', 'services', 'about', 'testimonials', 'faq', 'consultation'];
+            const sections = ['home', 'why', 'services', 'how-it-works', 'about', 'testimonials', 'faq', 'consultation'];
             const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
@@ -58,10 +59,11 @@ function Navbar() {
         { to: 'home', label: 'Home' },
         { to: 'why', label: 'Why Us' },
         { to: 'services', label: 'Programs' },
+        { to: 'how-it-works', label: 'How It Works' },
         { to: 'about', label: 'About' },
         { to: 'testimonials', label: 'Testimonials' },
-        { to: 'consultation', label: 'Contact' },
         { to: 'faq', label: 'FAQ' },
+        { to: 'consultation', label: 'Contact' },
     ];
 
     return (
@@ -75,13 +77,14 @@ function Navbar() {
                         className="navbar-brand"
                         onClick={closeMobileMenu}
                     >
-                        <motion.span
+                        <motion.img
+                            src={logo}
+                            alt="NutriVigor Logo"
+                            className="navbar-logo"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5 }}
-                        >
-                            Nutrivigor
-                        </motion.span>
+                        />
                     </ScrollLink>
 
                     {/* Desktop Navigation */}

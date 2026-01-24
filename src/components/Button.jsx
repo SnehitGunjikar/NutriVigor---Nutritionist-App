@@ -1,11 +1,15 @@
 import './Button.css';
 
-function Button({ children, variant = 'primary', size = 'medium', href, onClick, className = '' }) {
+function Button({ children, variant = 'primary', size = 'medium', href, onClick, className = '', external }) {
     const buttonClass = `btn btn-${variant} btn-${size} ${className}`;
 
     if (href) {
         return (
-            <a href={href} className={buttonClass}>
+            <a
+                href={href}
+                className={buttonClass}
+                {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
+            >
                 {children}
             </a>
         );

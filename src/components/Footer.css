@@ -128,6 +128,7 @@
     line-height: 1.7;
     font-size: 0.9375rem;
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 /* CREDENTIALS */
@@ -246,6 +247,7 @@
     font-size: 0.875rem;
     line-height: 1.6;
     margin-bottom: 1.25rem;
+    text-align: justify;
 }
 
 .newsletter-form {
@@ -296,6 +298,7 @@
     transform: translateY(-2px);
 }
 
+
 .newsletter-success {
     color: var(--color-accent-gold);
     font-size: 0.875rem;
@@ -316,6 +319,13 @@
 .footer-social-title {
     font-size: 1rem;
     margin-bottom: 1rem;
+}
+
+.footer-instagram-cta {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 .social-links {

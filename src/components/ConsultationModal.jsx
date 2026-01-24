@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getWhatsAppUrl } from '../config';
+import Button from './Button';
 import './ConsultationModal.css';
 
 function ConsultationModal({ isOpen, onClose }) {
@@ -198,11 +200,12 @@ function ConsultationModal({ isOpen, onClose }) {
                                             className={errors.healthGoal ? 'error' : ''}
                                         >
                                             <option value="">Select your goal</option>
-                                            <option value="weight-loss">Weight Management</option>
-                                            <option value="gut-health">Gut Health</option>
-                                            <option value="pcos">PCOS & Hormonal Balance</option>
+                                            <option value="6-week">6-Week Transformation</option>
+                                            <option value="90-day">90-Day Fat Loss Challenge</option>
                                             <option value="diabetes">Diabetes Management</option>
-                                            <option value="sports">Sports Nutrition</option>
+                                            <option value="pcod">PCOD Support</option>
+                                            <option value="bridal">Bridal Transformation</option>
+                                            <option value="sports">Sports Nutrition & Performance</option>
                                             <option value="general">General Wellness</option>
                                             <option value="other">Other</option>
                                         </select>
@@ -265,6 +268,17 @@ function ConsultationModal({ isOpen, onClose }) {
                                         'Book Free Consultation'
                                     )}
                                 </button>
+                                <div className="modal-whatsapp-cta">
+                                    <Button
+                                        href={getWhatsAppUrl('Hi, I\'d like to book a consultation.')}
+                                        variant="secondary"
+                                        size="medium"
+                                        external
+                                        className="whatsapp-btn"
+                                    >
+                                        Chat with us on WhatsApp
+                                    </Button>
+                                </div>
                             </form>
                         </>
                     ) : (

@@ -70,6 +70,7 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
 }
 
 .hero-cta {
@@ -127,6 +128,12 @@
     background: rgba(255, 255, 255, 0.25);
 }
 
+.trust-badge-number.trust-badge-text {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Animations */
 @keyframes pulse-glow {
 
@@ -168,19 +175,74 @@
 /* PROGRAMS GRID */
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--space-xl);
     margin-top: var(--space-2xl);
+}
+
+.specialized-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2rem;
 }
 
 .program-card {
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(163, 177, 138, 0.2);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(198, 167, 94, 0.4);
+    box-shadow: 0 20px 40px rgba(58, 90, 64, 0.08),
+        0 0 25px rgba(198, 167, 94, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.program-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .program-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-md);
+    font-size: 1.875rem;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(163, 177, 138, 0.1) 0%, rgba(163, 177, 138, 0.05) 100%);
+    border-radius: 12px;
+    color: var(--color-primary-deep-olive);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(163, 177, 138, 0.1);
+}
+
+.program-card:hover .program-icon {
+    transform: scale(1.05) rotate(5deg);
+    background: linear-gradient(135deg, rgba(198, 167, 94, 0.15) 0%, rgba(198, 167, 94, 0.05) 100%);
+    color: var(--color-accent-gold);
+}
+
+.program-card .card-title {
+    margin-bottom: 0;
+    font-size: clamp(1.15rem, 2vw, 1.25rem);
+    line-height: 1.3;
 }
 
 .program-meta {
@@ -194,6 +256,262 @@
     font-size: var(--text-sm);
     color: var(--color-text-graphite);
     font-weight: 500;
+}
+
+.programs-subheading {
+    font-size: var(--text-2xl);
+    color: var(--color-primary-deep-olive);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-sm);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.programs-subsection+.programs-subsection {
+    margin-top: var(--space-3xl);
+}
+
+.programs-note {
+    font-size: var(--text-base);
+    color: var(--color-text-graphite);
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 800px;
+}
+
+.program-ideal-for {
+    margin: var(--space-lg) 0;
+    padding: var(--space-md) 0;
+    border-top: 1px solid rgba(163, 177, 138, 0.2);
+    flex-grow: 1;
+}
+
+.program-ideal-label {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-accent-gold);
+    display: block;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.program-ideal-for ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    font-size: var(--text-sm);
+    color: var(--color-text-graphite);
+    display: grid;
+    gap: 0.5rem;
+}
+
+.program-ideal-for li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.program-ideal-for li::before {
+    content: '✦';
+    color: var(--color-accent-gold);
+    font-size: 0.8rem;
+}
+
+.program-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: auto;
+}
+
+.program-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* HOW IT WORKS – Snake roadmap */
+.how-it-works-section {
+    padding: var(--space-3xl) 0;
+}
+
+.how-it-works-roadmap {
+    position: relative;
+    max-width: 900px;
+    margin: var(--space-2xl) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    min-height: 640px;
+}
+
+/* Vertical line track */
+.how-it-works-roadmap::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%);
+    opacity: 0.3;
+    z-index: 0;
+    animation: roadmap-line-reveal 2s ease-out forwards;
+}
+
+@keyframes roadmap-line-reveal {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.roadmap-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 4rem 1fr;
+    gap: var(--space-md);
+    align-items: center;
+    min-height: 140px;
+    z-index: 1;
+}
+
+.roadmap-step-left {
+    grid-template-areas: "card node empty";
+}
+
+.roadmap-step-right {
+    grid-template-areas: "empty node card";
+}
+
+.roadmap-step-left .roadmap-card {
+    grid-area: card;
+    justify-self: end;
+}
+
+.roadmap-step-left .roadmap-node {
+    grid-area: node;
+    justify-self: center;
+}
+
+.roadmap-step-right .roadmap-card {
+    grid-area: card;
+    justify-self: start;
+}
+
+.roadmap-step-right .roadmap-node {
+    grid-area: node;
+    justify-self: center;
+}
+
+.roadmap-node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    min-width: 3.5rem;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    box-shadow: 0 8px 24px rgba(58, 90, 64, 0.2);
+    border: 3px solid var(--color-bg-off-white);
+    flex-shrink: 0;
+    cursor: default;
+    transition: box-shadow 0.3s ease;
+}
+
+.roadmap-node:hover {
+    box-shadow: 0 12px 36px rgba(198, 167, 94, 0.4);
+}
+
+.roadmap-node-number {
+    line-height: 1;
+}
+
+.roadmap-card {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-off-white);
+    border: 1px solid rgba(58, 90, 64, 0.12);
+    box-shadow: var(--shadow-soft);
+    max-width: 360px;
+    cursor: default;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-card:hover {
+    border-color: rgba(163, 177, 138, 0.4);
+}
+
+.roadmap-card-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary-deep-olive);
+    margin-bottom: var(--space-xs);
+    line-height: 1.35;
+}
+
+.roadmap-card-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-graphite);
+    margin: 0;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+@media (max-width: 767px) {
+    .how-it-works-roadmap {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .roadmap-step {
+        grid-template-columns: 1fr 3rem 1fr;
+        gap: var(--space-sm);
+        min-height: 120px;
+    }
+
+    .roadmap-card {
+        max-width: 100%;
+        padding: var(--space-md);
+    }
+
+    .roadmap-node {
+        width: 3rem;
+        height: 3rem;
+        min-width: 3rem;
+        font-size: var(--text-base);
+    }
+
+    .roadmap-card-title {
+        font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 479px) {
+    .roadmap-step {
+        grid-template-columns: 1fr 2.5rem 1fr;
+        min-height: 110px;
+    }
+
+    .roadmap-node {
+        width: 2.5rem;
+        height: 2.5rem;
+        min-width: 2.5rem;
+        font-size: var(--text-sm);
+    }
 }
 
 /* ABOUT SECTION */
@@ -217,6 +535,7 @@
     margin-bottom: var(--space-md);
     color: var(--color-text-graphite);
     font-size: var(--text-lg);
+    text-align: justify;
 }
 
 .credentials {
@@ -262,6 +581,13 @@
     opacity: 0.3;
 }
 
+.founder-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+}
+
 /* TESTIMONIALS SECTION */
 .testimonials-section {
     padding: var(--space-3xl) 0;
@@ -279,12 +605,36 @@
     padding: var(--space-xl);
 }
 
+.testimonial-image-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+    border: 3px solid var(--color-primary-sage);
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .testimonial-text {
     font-size: var(--text-lg);
     font-style: italic;
     color: var(--color-text-charcoal);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     line-height: 1.8;
+    text-align: justify;
+}
+
+.testimonial-stats {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary-deep-olive);
+    margin-bottom: var(--space-lg);
+    font-style: normal;
 }
 
 .testimonial-author {
@@ -323,6 +673,14 @@
 .trust-number {
     font-size: var(--text-5xl);
     font-family: var(--font-heading);
+    color: var(--color-primary-deep-olive);
+    font-weight: 700;
+}
+
+.trust-number.trust-number-text {
+    font-size: var(--text-2xl);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: var(--color-accent-gold);
     font-weight: 700;
     margin-bottom: var(--space-sm);
@@ -359,6 +717,17 @@
     font-size: var(--text-lg);
     color: var(--color-text-graphite);
     margin-bottom: var(--space-xl);
+    text-align: justify;
+}
+
+.cta-whatsapp-wrap {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cta-whatsapp-wrap .btn {
+    min-width: 250px;
 }
 
 /* FLOATING CTA */
@@ -454,6 +823,11 @@
     color: var(--color-text-graphite);
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.section-subtitle.why-choose-intro {
+    max-width: 720px;
 }
 
 /* RESPONSIVE DESIGN */
@@ -499,11 +873,8 @@
         width: 100%;
     }
 
-    .features-grid,
-    .programs-grid,
-    .testimonials-grid {
+    .specialized-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-md);
     }
 
     .about-content {

@@ -5,6 +5,14 @@
     margin: 0 auto;
 }
 
+.faq-intro {
+    text-align: justify;
+    font-size: var(--text-lg);
+    color: var(--color-text-graphite);
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+}
+
 .faq-items {
     display: flex;
     flex-direction: column;

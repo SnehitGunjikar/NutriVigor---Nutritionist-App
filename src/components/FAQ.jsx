@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FAQ.css';
 
-function FAQ({ faqs = [] }) {
+function FAQ({ faqs = [], intro }) {
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleFAQ = (index) => {
@@ -11,6 +11,7 @@ function FAQ({ faqs = [] }) {
 
     return (
         <div className="faq-section">
+            {intro && <p className="faq-intro">{intro}</p>}
             <div className="faq-items">
                 {faqs.map((faq, index) => (
                     <motion.div
