@@ -3,7 +3,7 @@
  * Update WHATSAPP_NUMBER when available (e.g. 919876543210).
  */
 
-export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210';
+export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '+919226908284';
 
 export function getWhatsAppUrl(message = '') {
   const encoded = message ? `?text=${encodeURIComponent(message)}` : '';
