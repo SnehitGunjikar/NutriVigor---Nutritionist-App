@@ -69,7 +69,7 @@ function Navbar() {
     return (
         <>
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-                <div className="container navbar-container">
+                <div className="navbar-container">
                     <ScrollLink
                         to="home"
                         smooth={true}

@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     background: var(--gradient-hero);
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
@@ -21,8 +21,8 @@
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    padding: var(--space-2xl) 0;
-    padding-top: 6rem;
+    padding: var(--space-2xl) 1rem;
+    padding-top: 10rem;
     position: relative;
 }
 
@@ -89,15 +89,16 @@
     justify-content: center;
     gap: 1.5rem;
     margin-top: 2.5rem;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    max-width: fit-content;
+    max-width: 95%;
     margin-left: auto;
     margin-right: auto;
+    flex-wrap: wrap;
 }
 
 .trust-badge-item {
@@ -185,7 +186,15 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    gap: 2rem;
+    gap: 1.5rem;
+}
+
+@media (max-width: 968px) {
+    .specialized-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 1.5rem;
+    }
 }
 
 .program-card {
@@ -831,6 +840,12 @@
 }
 
 /* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .hero-content {
+        padding-top: 12rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: var(--text-4xl);
@@ -843,6 +858,11 @@
     .hero-section {
         min-height: 90vh;
     }
+
+    .hero-content {
+        padding-top: 10rem;
+    }
+
 
     .hero-badge {
         padding: 0.4rem 1rem;
@@ -902,8 +922,12 @@
         max-width: 300px;
     }
 
-    .placeholder-text {
-        font-size: 5rem;
+    .hero-content {
+        padding-top: 8rem;
+    }
+
+    .cta-content {
+        padding: var(--space-xl);
     }
 }
 
@@ -926,6 +950,6 @@
     }
 
     .cta-content {
-        padding: var(--space-xl);
+        padding: var(--space-lg);
     }
 }
